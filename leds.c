@@ -54,3 +54,9 @@ void LED2_Init(void)
 	P2OUT &= ~BIT1;
 	P2OUT &= ~BIT2;
 }
+BOOLEAN LED1_State(void) {
+	return (P1OUT & BIT0);
+}
+BOOLEAN LED2_State(void) {
+	return (P2OUT & BIT0);
+}

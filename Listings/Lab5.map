@@ -13,6 +13,8 @@ Section Cross References
     lab5-timer.o(i.Timer32_2_ISR) refers to lab5-timer.o(.data) for MillisecondCounter
     lab5-timer.o(i.main) refers to uart.o(i.uart0_init) for uart0_init
     lab5-timer.o(i.main) refers to uart.o(i.uart0_put) for uart0_put
+    lab5-timer.o(i.main) refers to dflt_clz.o(x$fpl$dfltu) for __aeabi_ui2d
+    lab5-timer.o(i.main) refers to timer32.o(i.CalcPeriodFromFrequency) for CalcPeriodFromFrequency
     lab5-timer.o(i.main) refers to timer32.o(i.Timer32_1_Init) for Timer32_1_Init
     lab5-timer.o(i.main) refers to timer32.o(i.Timer32_2_Init) for Timer32_2_Init
     lab5-timer.o(i.main) refers to lab5-timer.o(i.Switch1_Interrupt_Init) for Switch1_Interrupt_Init
@@ -186,21 +188,22 @@ Removing Unused input sections from the image.
     Removing timer32.o(.rev16_text), (4 bytes).
     Removing timer32.o(.revsh_text), (4 bytes).
     Removing timer32.o(.rrx_text), (6 bytes).
-    Removing timer32.o(i.CalcPeriodFromFrequency), (80 bytes).
     Removing timer32.o(i.MS_Timeout_Handler), (12 bytes).
     Removing leds.o(.rev16_text), (4 bytes).
     Removing leds.o(.revsh_text), (4 bytes).
     Removing leds.o(.rrx_text), (6 bytes).
+    Removing leds.o(i.LED1_State), (2 bytes).
+    Removing leds.o(i.LED2_State), (2 bytes).
     Removing switches.o(.rev16_text), (4 bytes).
     Removing switches.o(.revsh_text), (4 bytes).
     Removing switches.o(.rrx_text), (6 bytes).
-    Removing switches.o(i.Switch1_Pressed), (20 bytes).
+    Removing switches.o(i.Switch1_Pressed), (36 bytes).
     Removing switches.o(i.Switch1_init), (72 bytes).
-    Removing switches.o(i.Switch2_Pressed), (20 bytes).
+    Removing switches.o(i.Switch2_Pressed), (36 bytes).
     Removing switches.o(i.Switch2_init), (72 bytes).
     Removing system_msp432p401r.o(.rev16_text), (4 bytes).
     Removing system_msp432p401r.o(.revsh_text), (4 bytes).
     Removing system_msp432p401r.o(.rrx_text), (6 bytes).
     Removing system_msp432p401r.o(i.SystemCoreClockUpdate), (628 bytes).
 
-34 unused section(s) (total 1540 bytes) removed from the image.
+35 unused section(s) (total 1496 bytes) removed from the image.
