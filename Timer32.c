@@ -21,7 +21,7 @@ unsigned long  CalcPeriodFromFrequency (double Hz)
 {
 	double period = 0.0;
 	period = (double)SystemCoreClock/Hz;
-	period = period;   // we divide by 2 because we want an interrupt for both the rising edge and the falling edge
+	period = period / 2;   // we divide by 2 because we want an interrupt for both the rising edge and the falling edge
 	return (unsigned long) period;
 }
 
@@ -55,11 +55,11 @@ void Timer32_1_Init(void(*task)(void), unsigned long period, enum timer32divider
 	
 	// timer reload value
 	// TIMER32_LOAD1
-  ;    
+  TIMER32_LOAD1 = timer1Period;    
 	
 	// clear Timer32 Timer 1 interrupt
 	// TIMER32_INTCLR1
-  ;   
+  TIMER32_INTCLR1 = 0;   
 
 	
   // bits31-8=X...X,   reserved
@@ -72,7 +72,22 @@ void Timer32_1_Init(void(*task)(void), unsigned long period, enum timer32divider
   // bit0,             1=one shot mode, 0=wrapping mode
 	
 	// TIMER32_CONTROL1, enable, periodic, 32 bit counter
-  ;
+  TIMER32_CONTROL1 |= BIT7;					//enable
+	TIMER32_CONTROL1 |= BIT6;					//periodic
+	TIMER32_CONTROL1 |= BIT5;					//interrupt enable
+	if (div == T32DIV1) {							//input clock div 1
+		TIMER32_CONTROL1 &= ~BIT3;
+		TIMER32_CONTROL1 &= ~BIT2;
+	} else if (div == T32DIV16) {			//input clock div 16
+		TIMER32_CONTROL1 &= ~BIT3;
+		TIMER32_CONTROL1 |= BIT2;
+	} else if (div == T32DIV256) {		//input clock div 256
+		TIMER32_CONTROL1 |= BIT3;
+		TIMER32_CONTROL1 &= ~BIT2;
+	}
+	TIMER32_CONTROL1 |= BIT1;					//32 bit counter
+	TIMER32_CONTROL1 |= BIT0;					//one shot mode
+	
 	
 	// interrupts enabled in the main program after all devices initialized
 	// NVIC_IPR6
@@ -80,7 +95,7 @@ void Timer32_1_Init(void(*task)(void), unsigned long period, enum timer32divider
 	
 	// enable interrupt 25 in NVIC, NVIC_ISER0
 	// NVIC_ISER0
-  ;         
+  NVIC_ISER0 |= BIT(25);         
 
   EndCritical(sr);
 }
@@ -91,14 +106,14 @@ void T32_INT1_IRQHandler(void)
 {
 	// acknowledge Timer32 Timer 1 interrupt
 	// TIMER32_INTCLR1
-  ;    
+  TIMER32_INTCLR1 = 0;    
 	
 	// execute user task
   (*Timer32_1_PeriodicTask)();               
 	
 	// timer reload value to start the timer again
 	// TIMER32_LOAD1
-	;    
+	TIMER32_LOAD1 = timer1Period;    
 }
 
 // ***************** Timer32_2_Init ****************
@@ -126,11 +141,11 @@ void Timer32_2_Init(void(*task)(void), unsigned long period, enum timer32divider
 	
 	// timer reload value
 	// TIMER32_LOAD2
-  ;    
+  TIMER32_LOAD2 = timer2Period;    
 	
 	// clear Timer32 Timer 2 interrupt
 	// TIMER32_INTCLR2
-  ;  
+  TIMER32_INTCLR2 = 0;  
 
   
   // bits31-8=X...X,   reserved
@@ -143,14 +158,28 @@ void Timer32_2_Init(void(*task)(void), unsigned long period, enum timer32divider
   // bit0,             1=one shot mode, 0=wrapping mode
 	
   //TIMER32_CONTROL2   
-  ;
+  TIMER32_CONTROL2 |= BIT7;					//enable
+	TIMER32_CONTROL2 |= BIT6;					//periodic
+	TIMER32_CONTROL2 |= BIT5;					//interrupt enable
+	if (div == T32DIV1) {							//input clock div 1
+		TIMER32_CONTROL2 &= ~BIT3;
+		TIMER32_CONTROL2 &= ~BIT2;
+	} else if (div == T32DIV16) {			//input clock div 16
+		TIMER32_CONTROL2 &= ~BIT3;
+		TIMER32_CONTROL2 |= BIT2;
+	} else if (div == T32DIV256) {		//input clock div 256
+		TIMER32_CONTROL2 |= BIT3;
+		TIMER32_CONTROL2 &= ~BIT2;
+	}
+	TIMER32_CONTROL2 |= BIT1;					//32 bit counter
+	TIMER32_CONTROL2 |= BIT0;					//one shot mode
 
 	// interrupts enabled in the main program after all devices initialized
   NVIC_IPR6 = (NVIC_IPR6&0xFFFF00FF)|0x00004000; // priority 2
 	
 	// enable interrupt 26 in NVIC, NVIC_ISER0
 	// NVIC_ISER0
-  ;         
+  NVIC_ISER0 |= BIT(26);         
 
   EndCritical(sr);
 }
@@ -161,13 +190,13 @@ void T32_INT2_IRQHandler(void)
 {
 	// acknowledge Timer32 Timer 1 interrupt
 	// TIMER32_INTCLR2
-  ;    
+  TIMER32_INTCLR2 = 0;    
 	
 	// execute user task
   (*Timer32_2_PeriodicTask)();               
 	
 	// timer reload value
 	// TIMER32_LOAD2
-	;    
+	TIMER32_LOAD2 = timer2Period;    
 
 }

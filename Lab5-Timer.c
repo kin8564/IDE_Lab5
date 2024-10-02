@@ -5,7 +5,7 @@
 * LJBeato
 * 1/14/2021
 *
-* Filename: main_timer_template.c
+* Filename: Lab5-Timer.c
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -26,8 +26,8 @@ uint16_t line[128];
 int colorIndex = 0;
 //BYTE colors[7] = { RED, GREEN, BLUE, CYAN, MAGENTA, YELLOW, WHITE };
 
-BOOLEAN Timer1RunningFlag = FALSE;
-BOOLEAN Timer2RunningFlag = FALSE;
+static BOOLEAN Timer1RunningFlag = FALSE;
+static BOOLEAN Timer2RunningFlag = FALSE;
 
 unsigned long MillisecondCounter = 0;
 //
@@ -45,10 +45,9 @@ void Switch1_Interrupt_Init(void)
 {
 	// disable interrupts
 	DisableInterrupts();
+	
 	// initialize the Switch as per previous lab
 	Switch1_Init();
-	
- 
 	
 	//7-0 PxIFG RW 0h Port X interrupt flag
 	//0b = No interrupt is pending.
@@ -112,8 +111,6 @@ void Switch2_Interrupt_Init(void)
 // Will be triggered if any pin on the port causes interrupt
 //
 // Derived From: Jonathan Valvano
-
-
 void PORT1_IRQHandler(void)
 {
 	float numSeconds = 0.0;
@@ -124,7 +121,7 @@ void PORT1_IRQHandler(void)
 	{
 		// acknowledge P1.1 is pressed, by setting BIT1 to zero - remember P1.1 is switch 1
 		// clear flag, acknowledge
-    ;     
+    P1IFG &= ~BIT1;     
 
 
   }
@@ -132,7 +129,8 @@ void PORT1_IRQHandler(void)
   if(P1->IFG & BIT4)
 	{
 		// acknowledge P1.4 is pressed, by setting BIT4 to zero - remember P1.4 is switch 2
-    ;     // clear flag4, acknowledge
+    // clear flag4, acknowledge
+		P1IFG &= ~BIT4;     
 
   }
 }

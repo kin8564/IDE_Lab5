@@ -11,6 +11,8 @@ Date: 9/24/24
 
 #include <stdio.h>
 
+#include "switches.h"
+
 void Switch1_init(void)
 {
 	// configure PortPin for Switch 1 and Switch2 as port I/O
@@ -46,8 +48,10 @@ BOOLEAN Switch1_Pressed(void)
 {
 	BOOLEAN retVal = FALSE;
 	// check if pressed
-	if ((P1IN & BIT1) == 0)
-			retVal = TRUE;
+	if ((P1IN & BIT1) == 0) {
+		retVal = TRUE;
+		P1IFG |= BIT1;							// generate an interrupt
+	}
 	return (retVal);              // return TRUE(pressed) or FALSE(not pressed)
 }
 /*
@@ -61,7 +65,9 @@ BOOLEAN Switch2_Pressed(void)
 {
 	BOOLEAN retVal = FALSE;
 	// check if pressed
-	if ((P1IN & BIT4) == 0)
-			retVal = TRUE;
+	if ((P1IN & BIT4) == 0) {
+		retVal = TRUE;
+		P1IFG |= BIT4;							// generate an interrupt
+	}
 	return (retVal);              // return TRUE(pressed) or FALSE(not pressed)
 }
