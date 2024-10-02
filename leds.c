@@ -53,5 +53,4 @@ void LED2_Init(void)
 	P2OUT &= ~BIT0;
 	P2OUT &= ~BIT1;
 	P2OUT &= ~BIT2;
- 
 }

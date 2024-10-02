@@ -26,8 +26,8 @@ uint16_t line[128];
 int colorIndex = 0;
 //BYTE colors[7] = { RED, GREEN, BLUE, CYAN, MAGENTA, YELLOW, WHITE };
 
-static BOOLEAN Timer1RunningFlag = FALSE;
-static BOOLEAN Timer2RunningFlag = FALSE;
+BOOLEAN Timer1RunningFlag = FALSE;	//maybe make static
+BOOLEAN Timer2RunningFlag = FALSE;
 
 unsigned long MillisecondCounter = 0;
 //
@@ -122,7 +122,9 @@ void PORT1_IRQHandler(void)
 		// acknowledge P1.1 is pressed, by setting BIT1 to zero - remember P1.1 is switch 1
 		// clear flag, acknowledge
     P1IFG &= ~BIT1;     
-
+		//TODO
+		//timer 1
+		//timer 1 isr function
 
   }
 	// Now check to see if it came from Switch2 ?
@@ -131,7 +133,10 @@ void PORT1_IRQHandler(void)
 		// acknowledge P1.4 is pressed, by setting BIT4 to zero - remember P1.4 is switch 2
     // clear flag4, acknowledge
 		P1IFG &= ~BIT4;     
-
+		//TODO
+		//timer 2
+		//timer 2 isr function
+		
   }
 }
 
@@ -147,6 +152,7 @@ void Timer32_1_ISR(void)
 //		LED1_On();
 //	}
 //	else LED1_Off();
+	
 }
 
 //
@@ -171,12 +177,14 @@ int main(void){
 	//initializations
 	uart0_init();
 	uart0_put("\r\nLab5 Timer demo\r\n");
-	// Set the Timer32-2 to 2Hz (0.5 sec between interrupts)
-  Timer32_1_Init(&Timer32_1_ISR, SystemCoreClock/2, T32DIV1); // initialize Timer A32-1;
+	// Set the Timer32-1 to 2Hz (0.5 sec between interrupts)
+		//Timer32_1_Init(&Timer32_1_ISR, SystemCoreClock/2, T32DIV1); // initialize Timer A32-1;
+  Timer32_1_Init(&Timer32_1_ISR, CalcPeriodFromFrequency(SystemCoreClock), T32DIV1); // initialize Timer A32-1;
         
 	// Setup Timer32-2 with a .001 second timeout.
 	// So use DEFAULT_CLOCK_SPEED/(1/0.001) = SystemCoreClock/1000
-	Timer32_2_Init(&Timer32_2_ISR, SystemCoreClock/1000, T32DIV1); // initialize Timer A32-1;
+		//Timer32_2_Init(&Timer32_2_ISR, SystemCoreClock/1000, T32DIV1); // initialize Timer A32-1;
+	Timer32_2_Init(&Timer32_2_ISR, CalcPeriodFromFrequency(SystemCoreClock)/500, T32DIV1); // initialize Timer A32-1;
     
 	Switch1_Interrupt_Init();
 	Switch2_Interrupt_Init();

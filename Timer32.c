@@ -17,10 +17,10 @@ static unsigned long timer2Period;
 // Helper function
 //
 ///////////////////////////////////////////////////////
-unsigned long  CalcPeriodFromFrequency (double Hz)
+unsigned long CalcPeriodFromFrequency (double Hz)
 {
 	double period = 0.0;
-	period = (double)SystemCoreClock/Hz;
+	period = (double)SystemCoreClock/Hz;	//SystemCoreClock is 48MHz (48,000,000)
 	period = period / 2;   // we divide by 2 because we want an interrupt for both the rising edge and the falling edge
 	return (unsigned long) period;
 }
@@ -45,9 +45,10 @@ void MS_Timeout_Handler(void)
 void Timer32_1_Init(void(*task)(void), unsigned long period, enum timer32divider div)
 {
 	long sr;
-	timer1Period = period;
+	timer1Period = period / div;
 	// default MCLK is 3MHz
 	// but set MCLK to 48 MHz
+	
   sr = StartCritical();
 	
 	// unsigned long function
@@ -86,7 +87,7 @@ void Timer32_1_Init(void(*task)(void), unsigned long period, enum timer32divider
 		TIMER32_CONTROL1 &= ~BIT2;
 	}
 	TIMER32_CONTROL1 |= BIT1;					//32 bit counter
-	TIMER32_CONTROL1 |= BIT0;					//one shot mode
+	TIMER32_CONTROL1 &= ~BIT0;					//wrapping mode
 	
 	
 	// interrupts enabled in the main program after all devices initialized
@@ -172,7 +173,7 @@ void Timer32_2_Init(void(*task)(void), unsigned long period, enum timer32divider
 		TIMER32_CONTROL2 &= ~BIT2;
 	}
 	TIMER32_CONTROL2 |= BIT1;					//32 bit counter
-	TIMER32_CONTROL2 |= BIT0;					//one shot mode
+	TIMER32_CONTROL2 &= ~BIT0;					//wrapping mode
 
 	// interrupts enabled in the main program after all devices initialized
   NVIC_IPR6 = (NVIC_IPR6&0xFFFF00FF)|0x00004000; // priority 2
