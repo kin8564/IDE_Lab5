@@ -26,8 +26,8 @@ uint16_t line[128];
 int colorIndex = 0;
 //BYTE colors[7] = { RED, GREEN, BLUE, CYAN, MAGENTA, YELLOW, WHITE };
 
-BOOLEAN Timer1RunningFlag = FALSE;	//maybe make static
-BOOLEAN Timer2RunningFlag = FALSE;
+static BOOLEAN Timer1RunningFlag = FALSE;	//maybe make static
+static BOOLEAN Timer2RunningFlag = FALSE;
 
 unsigned long MillisecondCounter = 0;
 //
@@ -127,10 +127,10 @@ void PORT1_IRQHandler(void)
 		//timer 1 isr function
 		if (!Timer1RunningFlag) {
 			Timer1RunningFlag = TRUE;
-			TIMER32_CONTROL1 |= BIT7;			//start timer
+			//TIMER32_CONTROL1 |= BIT7;			//start timer
 		} else {
 			Timer1RunningFlag = FALSE;
-			TIMER32_CONTROL1 &= ~BIT7;		//end timer
+			//TIMER32_CONTROL1 &= ~BIT7;		//end timer
 			LED1_Off();
 		}
 
@@ -144,6 +144,14 @@ void PORT1_IRQHandler(void)
 		
 		//TODO
 		//timer 2 isr function
+		if (!Timer2RunningFlag) {
+			Timer2RunningFlag = TRUE;
+			//TIMER32_CONTROL2 |= BIT7;			//start timer
+		} else {
+			Timer2RunningFlag = FALSE;
+			//TIMER32_CONTROL2 &= ~BIT7;		//end timer
+			}
+			
 		
   }
 }
@@ -157,6 +165,7 @@ void Timer32_1_ISR(void)
 {
 		if (LED1_State() == FALSE  && Timer1RunningFlag) {
 			LED1_On();
+			uart0_put("\r\nON\r\n");
 		}
 		else LED1_Off();
 }

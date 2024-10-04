@@ -10,8 +10,8 @@ double systemTimer = 0;
 void (*Timer32_1_PeriodicTask)(void);   // user function
 void (*Timer32_2_PeriodicTask)(void);   // user function
 
-static unsigned long timer1Period;
-static unsigned long timer2Period;
+static unsigned long timer1Period = 0;
+static unsigned long timer2Period = 0;
 ///////////////////////////////////////////////////////
 //
 // Helper function
@@ -73,7 +73,7 @@ void Timer32_1_Init(void(*task)(void), unsigned long period, enum timer32divider
   // bit0,             1=one shot mode, 0=wrapping mode
 	
 	// TIMER32_CONTROL1, enable, periodic, 32 bit counter
-  TIMER32_CONTROL1 &= ~BIT7;				//disable, enabled by switch
+  TIMER32_CONTROL1 |= BIT7;					//enabled
 	TIMER32_CONTROL1 |= BIT6;					//periodic
 	TIMER32_CONTROL1 |= BIT5;					//interrupt enable
 	if (div == T32DIV1) {							//input clock div 1
@@ -159,7 +159,7 @@ void Timer32_2_Init(void(*task)(void), unsigned long period, enum timer32divider
   // bit0,             1=one shot mode, 0=wrapping mode
 	
   //TIMER32_CONTROL2   
-  TIMER32_CONTROL2 &= ~BIT7;				//disable, enabled by switch
+  TIMER32_CONTROL2 &= ~BIT7;				//disabled
 	TIMER32_CONTROL2 |= BIT6;					//periodic
 	TIMER32_CONTROL2 |= BIT5;					//interrupt enable
 	if (div == T32DIV1) {							//input clock div 1

@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\Lab5.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Lab5.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Thu Oct 03 22:02:53 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Thu Oct 03 23:04:53 2024
 <BR><P>
 <H3>Maximum Stack Usage =         72 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -232,14 +232,14 @@ Global Symbols
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Switch1_Interrupt_Init
 </UL>
 
-<P><STRONG><a name="[5e]"></a>StartCritical</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, cortexm.o(.emb_text))
-<BR><BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer32_2_Init
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer32_1_Init
+<P><STRONG><a name="[5f]"></a>StartCritical</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, cortexm.o(.emb_text))
+<BR><BR>[Called By]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer32_2_Init
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer32_1_Init
 </UL>
 
-<P><STRONG><a name="[5f]"></a>EndCritical</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, cortexm.o(.emb_text))
-<BR><BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer32_2_Init
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer32_1_Init
+<P><STRONG><a name="[60]"></a>EndCritical</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, cortexm.o(.emb_text))
+<BR><BR>[Called By]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer32_2_Init
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer32_1_Init
 </UL>
 
 <P><STRONG><a name="[65]"></a>WaitForInterrupt</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, cortexm.o(.emb_text))
@@ -512,7 +512,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[2f]"></a>PORT1_IRQHandler</STRONG> (Thumb, 112 bytes, Stack size 16 bytes, lab5-timer.o(i.PORT1_IRQHandler))
+<P><STRONG><a name="[2f]"></a>PORT1_IRQHandler</STRONG> (Thumb, 108 bytes, Stack size 16 bytes, lab5-timer.o(i.PORT1_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = PORT1_IRQHandler
 </UL>
 <BR>[Calls]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED1_Off
@@ -560,20 +560,21 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_msp432p401r_uvision.o(RESET)
 </UL>
-<P><STRONG><a name="[37]"></a>Timer32_1_ISR</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, lab5-timer.o(i.Timer32_1_ISR))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Timer32_1_ISR
+<P><STRONG><a name="[37]"></a>Timer32_1_ISR</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, lab5-timer.o(i.Timer32_1_ISR))
+<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = Timer32_1_ISR &rArr; uart0_put
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED1_State
 <LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED1_On
 <LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED1_Off
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_put
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> lab5-timer.o(i.main)
 </UL>
-<P><STRONG><a name="[5d]"></a>Timer32_1_Init</STRONG> (Thumb, 212 bytes, Stack size 24 bytes, timer32.o(i.Timer32_1_Init))
+<P><STRONG><a name="[5e]"></a>Timer32_1_Init</STRONG> (Thumb, 212 bytes, Stack size 24 bytes, timer32.o(i.Timer32_1_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = Timer32_1_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EndCritical
-<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;StartCritical
+<BR>[Calls]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EndCritical
+<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;StartCritical
 </UL>
 <BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -581,11 +582,11 @@ Global Symbols
 <P><STRONG><a name="[38]"></a>Timer32_2_ISR</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, lab5-timer.o(i.Timer32_2_ISR))
 <BR>[Address Reference Count : 1]<UL><LI> lab5-timer.o(i.main)
 </UL>
-<P><STRONG><a name="[60]"></a>Timer32_2_Init</STRONG> (Thumb, 212 bytes, Stack size 24 bytes, timer32.o(i.Timer32_2_Init))
+<P><STRONG><a name="[61]"></a>Timer32_2_Init</STRONG> (Thumb, 212 bytes, Stack size 24 bytes, timer32.o(i.Timer32_2_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = Timer32_2_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EndCritical
-<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;StartCritical
+<BR>[Calls]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EndCritical
+<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;StartCritical
 </UL>
 <BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -595,34 +596,35 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WaitForInterrupt
-<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer32_2_Init
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer32_1_Init
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer32_2_Init
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer32_1_Init
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED2_Init
 <LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED1_Init
 <LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EnableInterrupts
 <LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalcPeriodFromFrequency
 <LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Switch2_Interrupt_Init
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Switch1_Interrupt_Init
-<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_put
-<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_init
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_put
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[61]"></a>uart0_init</STRONG> (Thumb, 134 bytes, Stack size 0 bytes, uart.o(i.uart0_init))
+<P><STRONG><a name="[62]"></a>uart0_init</STRONG> (Thumb, 134 bytes, Stack size 0 bytes, uart.o(i.uart0_init))
 <BR><BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[62]"></a>uart0_put</STRONG> (Thumb, 22 bytes, Stack size 4 bytes, uart.o(i.uart0_put))
+<P><STRONG><a name="[5d]"></a>uart0_put</STRONG> (Thumb, 22 bytes, Stack size 4 bytes, uart.o(i.uart0_put))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = uart0_put
 </UL>
 <BR>[Calls]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_putchar
 </UL>
 <BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer32_1_ISR
 </UL>
 
 <P><STRONG><a name="[66]"></a>uart0_putchar</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, uart.o(i.uart0_putchar))
-<BR><BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_put
+<BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_put
 </UL>
 
 <P><STRONG><a name="[52]"></a>__aeabi_ddiv</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, ddiv.o(x$fpl$ddiv))
