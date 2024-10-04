@@ -21,7 +21,7 @@ unsigned long CalcPeriodFromFrequency (double Hz)
 {
 	double period = 0.0;
 	period = (double)SystemCoreClock/Hz;	//SystemCoreClock is 48MHz (48,000,000)
-	period = period / 2;   // we divide by 2 because we want an interrupt for both the rising edge and the falling edge
+	period = period / 2.0;   // we divide by 2 because we want an interrupt for both the rising edge and the falling edge
 	return (unsigned long) period;
 }
 
@@ -45,7 +45,7 @@ void MS_Timeout_Handler(void)
 void Timer32_1_Init(void(*task)(void), unsigned long period, enum timer32divider div)
 {
 	long sr;
-	timer1Period = period / div;
+	timer1Period = period;
 	// default MCLK is 3MHz
 	// but set MCLK to 48 MHz
 	
@@ -130,7 +130,7 @@ void T32_INT1_IRQHandler(void)
 void Timer32_2_Init(void(*task)(void), unsigned long period, enum timer32divider div)
 {
 	long sr;
-	timer2Period = period / div;
+	timer2Period = period;
 	// default MCLK is 3MHz
 	// but set MCLK to 48 MHz
   
@@ -159,7 +159,7 @@ void Timer32_2_Init(void(*task)(void), unsigned long period, enum timer32divider
   // bit0,             1=one shot mode, 0=wrapping mode
 	
   //TIMER32_CONTROL2   
-  TIMER32_CONTROL2 &= ~BIT7;				//disabled
+  TIMER32_CONTROL2 |= BIT7;					//enabled
 	TIMER32_CONTROL2 |= BIT6;					//periodic
 	TIMER32_CONTROL2 |= BIT5;					//interrupt enable
 	if (div == T32DIV1) {							//input clock div 1
@@ -189,7 +189,7 @@ void Timer32_2_Init(void(*task)(void), unsigned long period, enum timer32divider
 
 void T32_INT2_IRQHandler(void)
 {
-	// acknowledge Timer32 Timer 1 interrupt
+	// acknowledge Timer32 Timer 2 interrupt
 	// TIMER32_INTCLR2
   TIMER32_INTCLR2 = 0;    
 	

@@ -123,14 +123,11 @@ void PORT1_IRQHandler(void)
 		// clear flag, acknowledge
     P1IFG &= ~BIT1;     
 		
-		//TODO
-		//timer 1 isr function
+		//Timer1 ISR
 		if (!Timer1RunningFlag) {
 			Timer1RunningFlag = TRUE;
-			//TIMER32_CONTROL1 |= BIT7;			//start timer
 		} else {
 			Timer1RunningFlag = FALSE;
-			//TIMER32_CONTROL1 &= ~BIT7;		//end timer
 			LED1_Off();
 		}
 
@@ -143,13 +140,11 @@ void PORT1_IRQHandler(void)
 		P1IFG &= ~BIT4;     
 		
 		//TODO
-		//timer 2 isr function
+		//Timer 2 ISR
 		if (!Timer2RunningFlag) {
 			Timer2RunningFlag = TRUE;
-			//TIMER32_CONTROL2 |= BIT7;			//start timer
 		} else {
 			Timer2RunningFlag = FALSE;
-			//TIMER32_CONTROL2 &= ~BIT7;		//end timer
 			}
 			
 		
@@ -165,9 +160,10 @@ void Timer32_1_ISR(void)
 {
 		if (LED1_State() == FALSE  && Timer1RunningFlag) {
 			LED1_On();
-			uart0_put("\r\nON\r\n");
 		}
-		else LED1_Off();
+		else {
+			LED1_Off();
+		}
 }
 
 //
@@ -189,17 +185,20 @@ void Timer32_2_ISR(void)
 //
 //
 int main(void){
+	unsigned long time;
 	//initializations
 	uart0_init();
 	uart0_put("\r\nLab5 Timer demo\r\n");
 	// Set the Timer32-1 to 2Hz (0.5 sec between interrupts)
 		//Timer32_1_Init(&Timer32_1_ISR, SystemCoreClock/2, T32DIV1); // initialize Timer A32-1;
-  Timer32_1_Init(&Timer32_1_ISR, CalcPeriodFromFrequency(SystemCoreClock), T32DIV1); // initialize Timer A32-1;
+	time = CalcPeriodFromFrequency(2);
+	Timer32_1_Init(&Timer32_1_ISR, time, T32DIV1); // initialize Timer A32-1;
         
 	// Setup Timer32-2 with a .001 second timeout.
 	// So use DEFAULT_CLOCK_SPEED/(1/0.001) = SystemCoreClock/1000
 		//Timer32_2_Init(&Timer32_2_ISR, SystemCoreClock/1000, T32DIV1); // initialize Timer A32-1;
-	Timer32_2_Init(&Timer32_2_ISR, (CalcPeriodFromFrequency(SystemCoreClock)/500), T32DIV1); // initialize Timer A32-1;
+	time = CalcPeriodFromFrequency(1000);
+	Timer32_2_Init(&Timer32_2_ISR, time, T32DIV1); // initialize Timer A32-1;
     
 	Switch1_Interrupt_Init();
 	Switch2_Interrupt_Init();
