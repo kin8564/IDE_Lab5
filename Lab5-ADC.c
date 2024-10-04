@@ -56,6 +56,7 @@ void Timer32_1_ISR(void)
 	  uart0_put("\n\rHex Value: 0x");
 	  sprintf(temp, "%X", analogIn);
 	  uart0_put(temp); 
+		//ADC14->CTL0 &= 0x00000000;
 		
 		
 	

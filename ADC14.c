@@ -68,7 +68,7 @@ void ADC0_InitSWTriggerCh6(void)
 	// ------------------------------------------------------------------
 	// 4) single, SMCLK, on, disabled, /1, 32 clocks, SHM	pulse-mode
 	// ADC14->CTL0
-	//ADC14->CTL0 = 0b00000100001000000011001100010000;
+	//ADC14->CTL0 = 0b 0000 0100 0010 0000 0011 0011 0001 0000;
 	ADC14->CTL0 = 0x4203310;
 
 	
@@ -146,7 +146,8 @@ unsigned int  ADC_In(void)
 
 	// 3) wait for ADC14->IFGR0, ADC14->IFGR0 bit 0 is set when conversion done
 	// ADC14->IFGR0
-  while (ADC14->IFGR0 & BIT0){};  
+  while (ADC14->IFGR0 & BIT0){};
+		
 		
 	// 14 bit sample returned  ADC14->MEM[0]
 	// ADC14->MEM[0] 14-bit conversion in bits 13-0 (31-16 undefined, 15-14 zero)
