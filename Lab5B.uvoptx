@@ -101,7 +101,9 @@
         <sRunDeb>0</sRunDeb>
         <sLrtime>0</sLrtime>
         <bEvRecOn>1</bEvRecOn>
-        <nTsel>2</nTsel>
+        <bSchkAxf>0</bSchkAxf>
+        <bTchkAxf>0</bTchkAxf>
+        <nTsel>3</nTsel>
         <sDll></sDll>
         <sDllPa></sDllPa>
         <sDlgDll></sDlgDll>
@@ -133,7 +135,11 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>CMSIS_AGDI</Key>
+<<<<<<< HEAD
           <Name>-X"" -O206 -S8 -C0 -P00 -N00("ARM CoreSight SW-DP") -D00(2BA01477) -L00(0) -TO18 -TC10000000 -TP20 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -FO7 -FD1000000 -FCE000 -FN2 -FF0MSP432P4xx_MainFlash256kB.FLM -FS00 -FL040000 -FP0($$Device:MSP432P401R$FlashARM\MSP432P4xx_MainFlash256kB.FLM) -FF1MSP432P4xx_InfoFlash.FLM -FS1200000 -FL14000 -FP1($$Device:MSP432P401R$FlashARM\MSP432P4xx_InfoFlash.FLM)</Name>
+=======
+          <Name>-X"" -O206 -S8 -C0 -P00000000 -N00("ARM CoreSight SW-DP") -D00(2BA01477) -L00(0) -TO65554 -TC10000000 -TT10000000 -TP20 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -FO7 -FD1000000 -FCE000 -FN2 -FF0MSP432P4xx_MainFlash256kB.FLM -FS00 -FL040000 -FP0($$Device:MSP432P401R$FlashARM\MSP432P4xx_MainFlash256kB.FLM) -FF1MSP432P4xx_InfoFlash.FLM -FS1200000 -FL14000 -FP1($$Device:MSP432P401R$FlashARM\MSP432P4xx_InfoFlash.FLM)</Name>
+>>>>>>> b503cb04c636ecc8ea042ce71fb446113cad40f8
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -163,6 +169,7 @@
           <ExecCommand></ExecCommand>
           <Expression>\\Lab5B\Lab5-ADC.c\47</Expression>
         </Bp>
+<<<<<<< HEAD
         <Bp>
           <Number>1</Number>
           <Type>0</Type>
@@ -211,6 +218,8 @@
           <ExecCommand></ExecCommand>
           <Expression>\\Lab5B\ADC14.c\155</Expression>
         </Bp>
+=======
+>>>>>>> b503cb04c636ecc8ea042ce71fb446113cad40f8
       </Breakpoint>
       <Tracepoint>
         <THDelay>0</THDelay>
@@ -262,6 +271,7 @@
       </SystemViewers>
       <DebugDescription>
         <Enable>1</Enable>
+        <EnableFlashSeq>0</EnableFlashSeq>
         <EnableLog>0</EnableLog>
         <Protocol>2</Protocol>
         <DbgClock>10000000</DbgClock>
