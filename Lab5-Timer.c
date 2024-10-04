@@ -199,7 +199,7 @@ void Timer32_2_ISR(void)
 		if(MillisecondCounter % 100000 == 1) { 
 			colorIndex++;
 		}
-		if (colorIndex == 8) colorIndex = 0;
+		if (colorIndex == 7) colorIndex = 0;
 	}
 	LED2_Off();
 	
