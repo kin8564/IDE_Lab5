@@ -24,7 +24,14 @@ BOOLEAN g_sendData = FALSE;
 uint16_t line[128];
 
 int colorIndex = 0;
-//BYTE colors[7] = { RED, GREEN, BLUE, CYAN, MAGENTA, YELLOW, WHITE };
+#define RED (BIT0)
+#define GREEN (BIT1)
+#define BLUE (BIT2)
+#define CYAN (BIT1 + BIT2)
+#define MAGENTA (BIT0 + BIT2)
+#define YELLOW (BIT0 + BIT1)
+#define WHITE (BIT0 + BIT1 + BIT2)
+BYTE colors [7] = { RED, GREEN, BLUE, CYAN, MAGENTA, YELLOW, WHITE };
 
 static BOOLEAN Timer1RunningFlag = FALSE;	//maybe make static
 static BOOLEAN Timer2RunningFlag = FALSE;
@@ -145,9 +152,11 @@ void PORT1_IRQHandler(void)
 			Timer2RunningFlag = TRUE;
 		} else {
 			Timer2RunningFlag = FALSE;
+			temp[0] =  MillisecondCounter;
+			uart0_put("\r\nTime: ");
+			uart0_put(&temp[0]);
 			}
 			
-		
   }
 }
 
@@ -160,8 +169,8 @@ void Timer32_1_ISR(void)
 {
 		if (LED1_State() == FALSE  && Timer1RunningFlag) {
 			LED1_On();
-		}
-		else {
+			Loop_Delay();
+		} else {
 			LED1_Off();
 		}
 }
@@ -173,9 +182,18 @@ void Timer32_1_ISR(void)
 //
 void Timer32_2_ISR(void)
 {
-	if (Timer2RunningFlag) {
+	unsigned long start = MillisecondCounter;
+	while (Switch2_Pressed()) {
 		MillisecondCounter++;
+		LED2_Off();
+		LED2_On(colors[colorIndex]);
+		if(MillisecondCounter > start + 10000) { 
+			colorIndex++;
+		}
+		if (colorIndex == 8) colorIndex = 0;
 	}
+	LED2_Off();
+	
 }
 
 

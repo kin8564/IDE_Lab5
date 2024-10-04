@@ -72,3 +72,18 @@ void LED1_On(void) {
 void LED1_Off(void) {
 	P1OUT &= ~BIT0;
 }
+void LED2_On(int color) {
+	P2OUT |= color;
+}
+void LED2_Off() {
+	P2OUT &= ~BIT0;	// Turn off LED2_RED
+	P2OUT &= ~BIT1;	// Turn off LED2_GREEN
+	P2OUT &= ~BIT2;	// Turn off LED2_BLUE
+}
+void Loop_Delay(void){
+	int i;
+	int j = 0;
+	for(i = 0; i < 100000; i++){
+		j++;
+	}
+}
