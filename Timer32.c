@@ -73,7 +73,7 @@ void Timer32_1_Init(void(*task)(void), unsigned long period, enum timer32divider
   // bit0,             1=one shot mode, 0=wrapping mode
 	
 	// TIMER32_CONTROL1, enable, periodic, 32 bit counter
-  TIMER32_CONTROL1 |= BIT7;					//enable
+  TIMER32_CONTROL1 &= ~BIT7;				//disable, enabled by switch
 	TIMER32_CONTROL1 |= BIT6;					//periodic
 	TIMER32_CONTROL1 |= BIT5;					//interrupt enable
 	if (div == T32DIV1) {							//input clock div 1
@@ -130,11 +130,11 @@ void T32_INT1_IRQHandler(void)
 void Timer32_2_Init(void(*task)(void), unsigned long period, enum timer32divider div)
 {
 	long sr;
-	timer2Period = period;
-
+	timer2Period = period / div;
 	// default MCLK is 3MHz
 	// but set MCLK to 48 MHz
-  sr = StartCritical();
+  
+	sr = StartCritical();
 	
 	// unsigned long function
 	// assigns the ISR
@@ -159,7 +159,7 @@ void Timer32_2_Init(void(*task)(void), unsigned long period, enum timer32divider
   // bit0,             1=one shot mode, 0=wrapping mode
 	
   //TIMER32_CONTROL2   
-  TIMER32_CONTROL2 |= BIT7;					//enable
+  TIMER32_CONTROL2 &= ~BIT7;				//disable, enabled by switch
 	TIMER32_CONTROL2 |= BIT6;					//periodic
 	TIMER32_CONTROL2 |= BIT5;					//interrupt enable
 	if (div == T32DIV1) {							//input clock div 1

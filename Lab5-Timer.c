@@ -122,9 +122,17 @@ void PORT1_IRQHandler(void)
 		// acknowledge P1.1 is pressed, by setting BIT1 to zero - remember P1.1 is switch 1
 		// clear flag, acknowledge
     P1IFG &= ~BIT1;     
+		
 		//TODO
-		//timer 1
 		//timer 1 isr function
+		if (!Timer1RunningFlag) {
+			Timer1RunningFlag = TRUE;
+			TIMER32_CONTROL1 |= BIT7;			//start timer
+		} else {
+			Timer1RunningFlag = FALSE;
+			TIMER32_CONTROL1 &= ~BIT7;		//end timer
+			LED1_Off();
+		}
 
   }
 	// Now check to see if it came from Switch2 ?
@@ -133,8 +141,8 @@ void PORT1_IRQHandler(void)
 		// acknowledge P1.4 is pressed, by setting BIT4 to zero - remember P1.4 is switch 2
     // clear flag4, acknowledge
 		P1IFG &= ~BIT4;     
+		
 		//TODO
-		//timer 2
 		//timer 2 isr function
 		
   }
@@ -147,16 +155,14 @@ void PORT1_IRQHandler(void)
 //
 void Timer32_1_ISR(void)
 {
-//	if (LED1_State() == FALSE )
-//	{
-//		LED1_On();
-//	}
-//	else LED1_Off();
-	
+		if (LED1_State() == FALSE ) {
+			LED1_On();
+		}
+		else LED1_Off();
 }
 
 //
-// Interrupt Service Routine
+// Interrupt Service Routine for Timer32-2
 //
 //
 //
@@ -184,7 +190,7 @@ int main(void){
 	// Setup Timer32-2 with a .001 second timeout.
 	// So use DEFAULT_CLOCK_SPEED/(1/0.001) = SystemCoreClock/1000
 		//Timer32_2_Init(&Timer32_2_ISR, SystemCoreClock/1000, T32DIV1); // initialize Timer A32-1;
-	Timer32_2_Init(&Timer32_2_ISR, CalcPeriodFromFrequency(SystemCoreClock)/500, T32DIV1); // initialize Timer A32-1;
+	Timer32_2_Init(&Timer32_2_ISR, (CalcPeriodFromFrequency(SystemCoreClock)/500), T32DIV1); // initialize Timer A32-1;
     
 	Switch1_Interrupt_Init();
 	Switch2_Interrupt_Init();

@@ -5,3 +5,6 @@ void LED2_Init(void);
 
 BOOLEAN LED1_State(void);
 BOOLEAN LED2_State(void);
+
+void LED1_On(void);
+void LED1_Off(void);

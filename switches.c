@@ -13,7 +13,7 @@ Date: 9/24/24
 
 #include "switches.h"
 
-void Switch1_init(void)
+void Switch1_Init(void)
 {
 	// configure PortPin for Switch 1 and Switch2 as port I/O
 	P1SEL0 &= ~BIT1;
@@ -25,7 +25,7 @@ void Switch1_init(void)
 	P1OUT |= BIT1;	
 	
 }
-void Switch2_init(void)
+void Switch2_Init(void)
 {
 	// configure PortPin for Switch 1 and Switch2 as port I/O
 	P1SEL0 &= ~BIT4;	

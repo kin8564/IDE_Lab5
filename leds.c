@@ -55,8 +55,20 @@ void LED2_Init(void)
 	P2OUT &= ~BIT2;
 }
 BOOLEAN LED1_State(void) {
-	return (P1OUT & BIT0);
+	if ((P1OUT & BIT0) == 1) {
+		return TRUE;
+	}
+	return FALSE;
 }
-BOOLEAN LED2_State(void) {
-	return (P2OUT & BIT0);
+BOOLEAN LED2_State(void) {	//only checks RED, add other colors if needed
+	if ((P2OUT & BIT0) == 1) { 
+		return TRUE;
+	}
+	return FALSE;
+}
+void LED1_On(void) {
+	P1OUT |= BIT0;
+}
+void LED1_Off(void) {
+	P1OUT &= ~BIT0;
 }
