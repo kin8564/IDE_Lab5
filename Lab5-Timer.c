@@ -122,6 +122,7 @@ void PORT1_IRQHandler(void)
 {
 	float numSeconds = 0.0;
 	char temp[32];
+	int i = 0;
 
 	// First we check if it came from Switch1 ?
   if(P1->IFG & BIT1)  // we start a timer to toggle the LED1 1 second ON and 1 second OFF
@@ -152,10 +153,18 @@ void PORT1_IRQHandler(void)
 			Timer2RunningFlag = TRUE;
 		} else {
 			Timer2RunningFlag = FALSE;
-			temp[0] =  MillisecondCounter;
+			if (MillisecondCounter > 0) {
+				numSeconds =  MillisecondCounter / 10000.0 / 30.0;
 			uart0_put("\r\nTime: ");
-			uart0_put(&temp[0]);
+			sprintf(temp, "%f", numSeconds);
+			uart0_put(temp);
+			for (i = 0; i < 32; i++) {
+				temp[i] = NULL;
 			}
+			MillisecondCounter = 0;
+			}
+			}
+			
 			
   }
 }
@@ -182,12 +191,12 @@ void Timer32_1_ISR(void)
 //
 void Timer32_2_ISR(void)
 {
-	unsigned long start = MillisecondCounter;
-	while (Switch2_Pressed()) {
+	//unsigned long start = MillisecondCounter;
+	while (Switch2_Pressed() && Timer2RunningFlag) {
 		MillisecondCounter++;
 		LED2_Off();
 		LED2_On(colors[colorIndex]);
-		if(MillisecondCounter > start + 10000) { 
+		if(MillisecondCounter % 100000 == 1) { 
 			colorIndex++;
 		}
 		if (colorIndex == 8) colorIndex = 0;
