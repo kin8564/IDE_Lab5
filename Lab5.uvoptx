@@ -152,7 +152,23 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>117</LineNumber>
+          <LineNumber>158</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>1790</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>.\Lab5-Timer.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\Lab5\Lab5-Timer.c\158</Expression>
+        </Bp>
+        <Bp>
+          <Number>1</Number>
+          <Type>0</Type>
+          <LineNumber>116</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>1122</Address>
           <ByteObject>0</ByteObject>
@@ -163,28 +179,12 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>.\Lab5-Timer.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\Lab5\Lab5-Timer.c\117</Expression>
-        </Bp>
-        <Bp>
-          <Number>1</Number>
-          <Type>0</Type>
-          <LineNumber>116</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>.\Lab5-Timer.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
+          <Expression>\\Lab5\Lab5-Timer.c\116</Expression>
         </Bp>
         <Bp>
           <Number>2</Number>
           <Type>0</Type>
-          <LineNumber>158</LineNumber>
+          <LineNumber>47</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -193,7 +193,7 @@
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>0</BreakIfRCount>
-          <Filename>.\Lab5-Timer.c</Filename>
+          <Filename>.\Timer32.c</Filename>
           <ExecCommand></ExecCommand>
           <Expression></Expression>
         </Bp>

@@ -155,7 +155,7 @@ void PORT1_IRQHandler(void)
 //
 void Timer32_1_ISR(void)
 {
-		if (LED1_State() == FALSE ) {
+		if (LED1_State() == FALSE  && Timer1RunningFlag) {
 			LED1_On();
 		}
 		else LED1_Off();
@@ -168,9 +168,9 @@ void Timer32_1_ISR(void)
 //
 void Timer32_2_ISR(void)
 {
-
+	if (Timer2RunningFlag) {
 		MillisecondCounter++;
-
+	}
 }
 
 
