@@ -1834,7 +1834,7 @@
       <Doc>
         <Name>.\ADC14.c</Name>
         <ColumnNumber>12</ColumnNumber>
-        <TopLine>115</TopLine>
+        <TopLine>109</TopLine>
         <CurrentLine>154</CurrentLine>
         <Folding>1</Folding>
         <ContractedFolders></ContractedFolders>
@@ -1842,18 +1842,18 @@
       </Doc>
       <Doc>
         <Name>.\Lab5-ADC.c</Name>
-        <ColumnNumber>20</ColumnNumber>
-        <TopLine>27</TopLine>
-        <CurrentLine>68</CurrentLine>
+        <ColumnNumber>34</ColumnNumber>
+        <TopLine>21</TopLine>
+        <CurrentLine>57</CurrentLine>
         <Folding>1</Folding>
         <ContractedFolders></ContractedFolders>
         <PaneID>0</PaneID>
       </Doc>
       <Doc>
         <Name>D:\others\CMPE460\Lab 5\IDE_Lab5\Lab5-Timer.c</Name>
-        <ColumnNumber>6</ColumnNumber>
-        <TopLine>128</TopLine>
-        <CurrentLine>160</CurrentLine>
+        <ColumnNumber>5</ColumnNumber>
+        <TopLine>122</TopLine>
+        <CurrentLine>140</CurrentLine>
         <Folding>1</Folding>
         <ContractedFolders></ContractedFolders>
         <PaneID>0</PaneID>

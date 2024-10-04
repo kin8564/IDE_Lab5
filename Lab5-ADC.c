@@ -33,7 +33,33 @@ unsigned long MillisecondCounter = 0;
 // Interrupt Service Routine for Timer32-1
 void Timer32_1_ISR(void)
 {
-
+	  char temp[64];
+	  unsigned int analogIn = 0;
+	
+//	//Timer1 ISR
+//		if (!Timer1RunningFlag) {
+//			Timer1RunningFlag = TRUE;
+//		} else {
+//			Timer1RunningFlag = FALSE; }
+		
+		
+		
+		analogIn = ADC_In();
+	
+		//print decimal
+	  uart0_put("\n\rDecimal Value: ");
+		sprintf(temp, "%i", analogIn);
+		uart0_put(temp); 
+	 
+	
+	  //print HEX
+	  uart0_put("\n\rHex Value: 0x");
+	  sprintf(temp, "%X", analogIn);
+	  uart0_put(temp); 
+		
+		
+	
+		
 }
 // Interrupt Service Routine
 void Timer32_2_ISR(void)
@@ -62,13 +88,9 @@ int main(void)
 	
 	  while(1)
 	{
-		analogIn =  ADC_In();
 		
-		sprintf( temp, "%i", analogIn);
-		uart0_put(temp);
-		
-		;
-		
+   WaitForInterrupt();
+			
   }
 }
 

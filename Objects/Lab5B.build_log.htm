@@ -27,18 +27,15 @@ Project File Date:  10/04/2024
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 5 (build 528)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Target 1'
-assembling startup_msp432p401r_uvision.s...
-compiling CortexM.c...
-compiling system_msp432p401r.c...
-compiling leds.c...
 compiling Lab5-ADC.c...
-compiling uart.c...
-compiling ADC14.c...
-compiling switches.c...
-compiling Timer32.c...
+Lab5-ADC.c(75): warning:  #177-D: variable "temp"  was declared but never referenced
+  	char temp[64];
+Lab5-ADC.c(76): warning:  #177-D: variable "analogIn"  was declared but never referenced
+  	unsigned int analogIn = 0;
+Lab5-ADC.c: 2 warnings, 0 errors
 linking...
-Program Size: Code=3304 RO-data=356 RW-data=32 ZI-data=1120  
-".\Objects\Lab5B.axf" - 0 Error(s), 0 Warning(s).
+Program Size: Code=3474 RO-data=398 RW-data=32 ZI-data=1120  
+".\Objects\Lab5B.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -69,7 +66,7 @@ Package Vendor: TexasInstruments
       Source file:   Examples\EmptyMain\main.c
 
    * Component: ARM::CMSIS:CORE:5.6.0
-Build Time Elapsed:  00:00:18
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>
