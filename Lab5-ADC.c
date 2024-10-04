@@ -59,8 +59,14 @@ int main(void)
 	Switch2_Init();
 	ADC0_InitSWTriggerCh6();
 	EnableInterrupts();
-  while(1)
+	
+	  while(1)
 	{
+		analogIn =  ADC_In();
+		
+		sprintf( temp, "%i", analogIn);
+		uart0_put(temp);
+		
 		;
 		
   }
