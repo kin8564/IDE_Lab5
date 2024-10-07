@@ -77,6 +77,8 @@ void ControlPin_SI_Init()
 	// initialize P5.5 and make it output (P5.5 SI Pin)
 	P5SEL0 |= SI;                  
   P5SEL1 &= ~SI;
+	P5DIR |= SI;
+	
     // start Timer
 	Timer32_1_Init(*SI_Handler, period, T32DIV1);
 }
@@ -95,7 +97,8 @@ void ControlPin_CLK_Init()
 	// initialize P5.4 and make it output (P5.4 CLK Pin)
 	P5SEL0 |= CLK;                  
   P5SEL1 &= ~CLK;
-
+	P5DIR |= CLK;
+	
 	// if the period is based on a 48MHz clock, each tick would be 20.83 ns
 	// i want a 100KHz clock
 	SysTickTimer_Init (*CLK_Handler, period);
