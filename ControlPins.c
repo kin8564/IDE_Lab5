@@ -49,6 +49,8 @@ void SI_Handler(void)
 	// Read the TSL1401 instructions for SI, CLCK to start the data transfer process
 	P5->OUT &= ~SI;
 	P5->OUT &= ~CLK;
+	P5->OUT |= SI;
+	P5->OUT |= CLK;
 	
 	// OK, Data should be ready to clock out, so start the clock
 	// Start the clock after we issues a SI pulse.
