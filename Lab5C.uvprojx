@@ -468,11 +468,6 @@
               <FileType>1</FileType>
               <FilePath>.\ADC14.c</FilePath>
             </File>
-            <File>
-              <FileName>MK40X256VMD100.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\MK40X256VMD100.h</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
@@ -535,5 +530,20 @@
       </file>
     </files>
   </RTE>
+
+  <LayerInfo>
+    <Layers>
+      <Layer>
+        <LayName>&lt;Project Info&gt;</LayName>
+        <LayDesc></LayDesc>
+        <LayUrl></LayUrl>
+        <LayKeys></LayKeys>
+        <LayCat></LayCat>
+        <LayLic></LayLic>
+        <LayTarg>0</LayTarg>
+        <LayPrjMark>1</LayPrjMark>
+      </Layer>
+    </Layers>
+  </LayerInfo>
 
 </Project>

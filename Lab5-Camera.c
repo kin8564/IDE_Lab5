@@ -39,8 +39,8 @@
 //
 
 // line stores the current array of camera data
-extern uint16_t line[128];
-extern BOOLEAN g_sendData;
+uint16_t line[128];
+BOOLEAN g_sendData;
 
 static char str[100];
 

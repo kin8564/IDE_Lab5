@@ -16,4 +16,4 @@
 .\objects\controlpins.o: SysTickTimer.h
 .\objects\controlpins.o: ControlPins.h
 .\objects\controlpins.o: ADC14.h
-.\objects\controlpins.o: MK40X256VMD100.h
+.\objects\controlpins.o: Leds.h
