@@ -24,7 +24,7 @@ void ADC0_InitSWTriggerCh6(void)
 {
 	// wait for reference to be idle
 	// REF_A->CTL0
-  while(REF_A->CTL0 & BIT(10)){};
+  while(REF_A->CTL0 & REFGENBUSY){}; //BIT(10)
 	
 	// set reference voltage to 2.5V
 	// 1) configure reference for static 2.5V
@@ -33,15 +33,15 @@ void ADC0_InitSWTriggerCh6(void)
 		
 	// wait for reference voltage to be ready
 	// REF_A->CTL0
-  while((REF_A->CTL0&0x1000) == 0){};
+  while((REF_A->CTL0 & REFGENBUSY) == 0){};//0x1000
 
 	// 2) ADC14ENC = 0 to allow programming
 	// ADC14->CTL0
-  ADC14->CTL0 |= BIT1;        
+  ADC14->CTL0 &= ~BIT1; //  ADC14ENC <<changed to ~     
 
 	// 3) wait for BUSY to be zero		
 	// ADC14->CTL0
-  while(ADC14->CTL0&0x00010000){};   
+  while(ADC14->CTL0 & 0x00010000){};  //  ADC14BUSY    
 		
 	
 	// ------------------------------------------------------------------		
@@ -123,7 +123,7 @@ void ADC0_InitSWTriggerCh6(void)
 	
 	// 9) enable
 	// ADC14->CTL0
-  ADC14->CTL0 |= BIT1;         
+  ADC14->CTL0 |= BIT1; // ADC14ENC 
 }
 
 
@@ -138,16 +138,16 @@ unsigned int  ADC_In(void)
 	
 	// 1) wait for BUSY to be zero  ADC14->CTL0
 	// ADC14->CTL0
-  while(ADC14->CTL0&0x00010000){}; 
+  while(ADC14->CTL0 & 0x00010000){};  //  ADC14BUSY
 		
 	// 2) start single conversion	  
 	// ADC14->CTL0
-  ADC14->CTL0 |= BIT0;  
+  ADC14->CTL0 |= BIT0;  //  ADC14SC
 
 	// 3) wait for ADC14->IFGR0, ADC14->IFGR0 bit 0 is set when conversion done
 	// ADC14->IFGR0
 
-  while (ADC14->IFGR0 & BIT0){};
+  while (ADC14->IFGR0 & BIT0){}; //  ADC14IFG0
 
 		
 	// 14 bit sample returned  ADC14->MEM[0]
