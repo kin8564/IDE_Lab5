@@ -35,24 +35,15 @@ void Timer32_1_ISR(void)
 {
 	  char temp[64];
 	  unsigned int analogIn = 0;
-	
-//	//Timer1 ISR
-//		if (!Timer1RunningFlag) {
-//			Timer1RunningFlag = TRUE;
-//		} else {
-//			Timer1RunningFlag = FALSE; }
-		
-		
-		
+			
 		analogIn = ADC_In();
 	
-		//print decimal
+		//Print decimal
 	  uart0_put("\n\rDecimal Value: ");
 		sprintf(temp, "%i", analogIn);
 		uart0_put(temp); 
-	 
 	
-	  //print HEX
+	  //Print HEX
 	  uart0_put("\n\rHex Value: 0x");
 	  sprintf(temp, "%X", analogIn);
 	  uart0_put(temp); 
@@ -73,8 +64,8 @@ void Timer32_2_ISR(void)
 // main
 int main(void)
 {
-	char temp[64];
-	unsigned int analogIn = 0;
+	//char temp[64];
+	//unsigned int analogIn = 0;
 	//initializations
 	uart0_init();
 	uart0_put("\r\nLab5 ADC demo\r\n");
@@ -86,12 +77,9 @@ int main(void)
 	Switch2_Init();
 	ADC0_InitSWTriggerCh6();
 	EnableInterrupts();
-	
-	  while(1)
+	while(1)
 	{
-		
-   WaitForInterrupt();
-			
+   WaitForInterrupt();	
   }
 }
 

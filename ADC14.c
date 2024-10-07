@@ -33,7 +33,7 @@ void ADC0_InitSWTriggerCh6(void)
 		
 	// wait for reference voltage to be ready
 	// REF_A->CTL0
-  while((REF_A->CTL0 & REFGENBUSY) == 0){};//0x1000
+  while((REF_A->CTL0 & REFGENRDY) == 0){};//0x1000
 
 	// 2) ADC14ENC = 0 to allow programming
 	// ADC14->CTL0
@@ -147,13 +147,13 @@ unsigned int  ADC_In(void)
 	// 3) wait for ADC14->IFGR0, ADC14->IFGR0 bit 0 is set when conversion done
 	// ADC14->IFGR0
 
-  while (ADC14->IFGR0 & BIT0){}; //  ADC14IFG0
+  while ((ADC14->IFGR0 & BIT0) == 0){}; //  ADC14IFG0
 
 		
 	// 14 bit sample returned  ADC14->MEM[0]
 	// ADC14->MEM[0] 14-bit conversion in bits 13-0 (31-16 undefined, 15-14 zero)
 	// ADC14->MEM[0]
-	adcIn = ADC14->MEM[0] & 0x7FFF ;
+	adcIn = ADC14->MEM[0] & 0x3FFF ;
 		
   return adcIn;                 // 4) return result 0 to 16383
 }
