@@ -33,25 +33,33 @@ unsigned long MillisecondCounter = 0;
 // Interrupt Service Routine for Timer32-1
 void Timer32_1_ISR(void)
 {
-	  char temp[64];
-	  unsigned int analogIn = 0;
-			
-		analogIn = ADC_In();
-	
-		//Print decimal
-	  uart0_put("\n\rDecimal Value: ");
-		sprintf(temp, "%i", analogIn);
-		uart0_put(temp); 
-	
-	  //Print HEX
-	  uart0_put("\n\rHex Value: 0x");
-	  sprintf(temp, "%X", analogIn);
-	  uart0_put(temp); 
-		//ADC14->CTL0 &= 0x00000000;
+	char temp[64];
+	unsigned int analogIn = 0;
 		
-		
+	analogIn = ADC_In();
 	
-		
+//		//Print decimal
+//	  uart0_put("\n\rDecimal Value: ");
+//		sprintf(temp, "%i", analogIn);
+//		uart0_put(temp); 
+//	
+//	  //Print HEX
+//	  uart0_put("\n\rHex Value: 0x");
+//	  sprintf(temp, "%X", analogIn);
+//	  uart0_put(temp); 
+	
+	//Print degrees Celsius
+	analogIn = analogIn * 0.01;
+	uart0_put("\n\rTemp Celsuis: ");
+	sprintf(temp, "%i", analogIn);
+	uart0_put(temp);
+	
+	//Print degrees Farenheit
+	analogIn = (analogIn * 9 / 5) + 32;
+	uart0_put("\n\rTemp Farenheit: ");
+	sprintf(temp, "%i", analogIn);
+	uart0_put(temp);
+
 }
 // Interrupt Service Routine
 void Timer32_2_ISR(void)
