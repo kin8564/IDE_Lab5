@@ -1,6 +1,7 @@
 .\objects\lab5-adc.o: Lab5-ADC.c
 .\objects\lab5-adc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\lab5-adc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\lab5-adc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 .\objects\lab5-adc.o: C:\Users\kings\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp.h
 .\objects\lab5-adc.o: C:\Users\kings\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp432p401r.h
 .\objects\lab5-adc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

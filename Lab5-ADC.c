@@ -9,6 +9,7 @@
 */
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 #include "msp.h"
 #include "uart.h"
@@ -35,30 +36,37 @@ void Timer32_1_ISR(void)
 {
 	char temp[64];
 	unsigned int analogIn = 0;
-		
+	double tempIn = 0;
+	double Vout = 0;	
+	
 	analogIn = ADC_In();
 	
-//		//Print decimal
-//	  uart0_put("\n\rDecimal Value: ");
-//		sprintf(temp, "%i", analogIn);
-//		uart0_put(temp); 
-//	
-//	  //Print HEX
-//	  uart0_put("\n\rHex Value: 0x");
-//	  sprintf(temp, "%X", analogIn);
-//	  uart0_put(temp); 
+//	//Print decimal
+//	uart0_put("\n\rDecimal Value: ");
+//	sprintf(temp, "%i", analogIn);
+//	uart0_put(temp); 
+
+//	//Print HEX
+//	uart0_put("\n\rHex Value: 0x");
+//	sprintf(temp, "%X", analogIn);
+//	uart0_put(temp);
+//	uart0_put("\r\n");	
+
 	
 	//Print degrees Celsius
-	analogIn = analogIn * 0.01;
+	Vout = (2.5 * analogIn) / (pow(2.0, 14.0)-1.0);
+	//Vout = analogIn;
+	tempIn = Vout * 10;		//10mV to V
 	uart0_put("\n\rTemp Celsuis: ");
-	sprintf(temp, "%i", analogIn);
+	sprintf(temp, "%f", tempIn);
 	uart0_put(temp);
 	
 	//Print degrees Farenheit
-	analogIn = (analogIn * 9 / 5) + 32;
+	tempIn = (tempIn * 9.0 / 5.0) + 32.0;
 	uart0_put("\n\rTemp Farenheit: ");
-	sprintf(temp, "%i", analogIn);
+	sprintf(temp, "%f", tempIn);
 	uart0_put(temp);
+	uart0_put("\r\n");
 
 }
 // Interrupt Service Routine
