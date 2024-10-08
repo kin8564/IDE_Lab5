@@ -13,6 +13,7 @@ void EnableSysTickTimer(void)
 {
 	// enable SysTick with core clock and interrupts
 	//SYSTICK_STCSR
+	SYSTICK_STCSR |= BIT1;
 	SYSTICK_STCSR |= BIT0;
 }
 
@@ -23,7 +24,8 @@ void DisableSysTickTimer(void)
 {
 	// disable SysTick with core clock and interrupts 
 	// SYSTICK_STCSR
-	SYSTICK_STCSR &= ~BIT0;;      
+	SYSTICK_STCSR &= ~BIT1;
+	SYSTICK_STCSR &= ~BIT0;
 }
 // numIntsPerSec is equal to the number is the 
 // number of times per second the SysTickHandler is going to be called.
@@ -52,7 +54,7 @@ void SysTickTimer_Init(void(*task)(void), unsigned long period)
 	// Current Value Register
 	// 3) any write to current clears it
 	// SYSTICK_STCVR
-  SYSTICK_STCVR = 0;    
+  SYSTICK_STCVR |= BIT1;    
 
 	// priority 2
 	// SCB_SHPR3

@@ -438,41 +438,41 @@ Image Symbol Table
     i.CLK_Handler                            0x0000058c   Section        0  controlpins.o(i.CLK_Handler)
     i.CalcPeriodFromFrequency                0x000005e8   Section        0  timer32.o(i.CalcPeriodFromFrequency)
     i.ControlPin_CLK_Init                    0x00000650   Section        0  controlpins.o(i.ControlPin_CLK_Init)
-    i.ControlPin_SI_Init                     0x000006a4   Section        0  controlpins.o(i.ControlPin_SI_Init)
-    i.DisableSysTickTimer                    0x000006f4   Section        0  systicktimer.o(i.DisableSysTickTimer)
-    i.EnableSysTickTimer                     0x00000706   Section        0  systicktimer.o(i.EnableSysTickTimer)
-    i.INIT_Camera                            0x00000718   Section        0  lab5-camera.o(i.INIT_Camera)
-    i.LED1_Init                              0x00000734   Section        0  leds.o(i.LED1_Init)
-    i.LED1_Off                               0x00000778   Section        0  leds.o(i.LED1_Off)
-    i.LED1_On                                0x0000078c   Section        0  leds.o(i.LED1_On)
-    i.LED2_Init                              0x000007a0   Section        0  leds.o(i.LED2_Init)
-    i.SI_Handler                             0x00000850   Section        0  controlpins.o(i.SI_Handler)
-    i.Switch2_Init                           0x0000089c   Section        0  switches.o(i.Switch2_Init)
-    i.SysTickTimer_Init                      0x000008e4   Section        0  systicktimer.o(i.SysTickTimer_Init)
-    i.SysTick_Handler                        0x0000092c   Section        0  systicktimer.o(i.SysTick_Handler)
-    i.SystemInit                             0x00000948   Section        0  system_msp432p401r.o(i.SystemInit)
-    i.T32_INT1_IRQHandler                    0x000009fc   Section        0  timer32.o(i.T32_INT1_IRQHandler)
-    i.T32_INT2_IRQHandler                    0x00000a20   Section        0  timer32.o(i.T32_INT2_IRQHandler)
-    i.Timer32_1_Init                         0x00000a44   Section        0  timer32.o(i.Timer32_1_Init)
-    i.main                                   0x00000b28   Section        0  lab5-camera.o(i.main)
-    i.myDelay                                0x00000c88   Section        0  lab5-camera.o(i.myDelay)
-    i.uart0_init                             0x00000ca8   Section        0  uart.o(i.uart0_init)
-    i.uart0_put                              0x00000d3c   Section        0  uart.o(i.uart0_put)
-    i.uart0_putchar                          0x00000d54   Section        0  uart.o(i.uart0_putchar)
-    x$fpl$ddiv                               0x00000d6c   Section      688  ddiv.o(x$fpl$ddiv)
-    $v0                                      0x00000d6c   Number         0  ddiv.o(x$fpl$ddiv)
-    ddiv_entry                               0x00000d73   Thumb Code     0  ddiv.o(x$fpl$ddiv)
-    x$fpl$dfixu                              0x0000101c   Section       90  dfixu.o(x$fpl$dfixu)
-    $v0                                      0x0000101c   Number         0  dfixu.o(x$fpl$dfixu)
-    x$fpl$dfltu                              0x00001076   Section       38  dflt_clz.o(x$fpl$dfltu)
-    $v0                                      0x00001076   Number         0  dflt_clz.o(x$fpl$dfltu)
-    x$fpl$dnaninf                            0x0000109c   Section      156  dnaninf.o(x$fpl$dnaninf)
-    $v0                                      0x0000109c   Number         0  dnaninf.o(x$fpl$dnaninf)
-    x$fpl$dretinf                            0x00001138   Section       12  dretinf.o(x$fpl$dretinf)
-    $v0                                      0x00001138   Number         0  dretinf.o(x$fpl$dretinf)
-    x$fpl$fpinit                             0x00001144   Section       10  fpinit.o(x$fpl$fpinit)
-    $v0                                      0x00001144   Number         0  fpinit.o(x$fpl$fpinit)
-    x$fpl$usenofp                            0x0000114e   Section        0  usenofp.o(x$fpl$usenofp)
+    i.ControlPin_SI_Init                     0x000006b0   Section        0  controlpins.o(i.ControlPin_SI_Init)
+    i.DisableSysTickTimer                    0x0000070c   Section        0  systicktimer.o(i.DisableSysTickTimer)
+    i.EnableSysTickTimer                     0x00000728   Section        0  systicktimer.o(i.EnableSysTickTimer)
+    i.INIT_Camera                            0x00000744   Section        0  lab5-camera.o(i.INIT_Camera)
+    i.LED1_Init                              0x00000760   Section        0  leds.o(i.LED1_Init)
+    i.LED1_Off                               0x000007a4   Section        0  leds.o(i.LED1_Off)
+    i.LED1_On                                0x000007b8   Section        0  leds.o(i.LED1_On)
+    i.LED2_Init                              0x000007cc   Section        0  leds.o(i.LED2_Init)
+    i.SI_Handler                             0x0000087c   Section        0  controlpins.o(i.SI_Handler)
+    i.Switch2_Init                           0x000008c8   Section        0  switches.o(i.Switch2_Init)
+    i.SysTickTimer_Init                      0x00000910   Section        0  systicktimer.o(i.SysTickTimer_Init)
+    i.SysTick_Handler                        0x0000095c   Section        0  systicktimer.o(i.SysTick_Handler)
+    i.SystemInit                             0x00000978   Section        0  system_msp432p401r.o(i.SystemInit)
+    i.T32_INT1_IRQHandler                    0x00000a2c   Section        0  timer32.o(i.T32_INT1_IRQHandler)
+    i.T32_INT2_IRQHandler                    0x00000a50   Section        0  timer32.o(i.T32_INT2_IRQHandler)
+    i.Timer32_1_Init                         0x00000a74   Section        0  timer32.o(i.Timer32_1_Init)
+    i.main                                   0x00000b58   Section        0  lab5-camera.o(i.main)
+    i.myDelay                                0x00000cb8   Section        0  lab5-camera.o(i.myDelay)
+    i.uart0_init                             0x00000cd8   Section        0  uart.o(i.uart0_init)
+    i.uart0_put                              0x00000d6c   Section        0  uart.o(i.uart0_put)
+    i.uart0_putchar                          0x00000d84   Section        0  uart.o(i.uart0_putchar)
+    x$fpl$ddiv                               0x00000d9c   Section      688  ddiv.o(x$fpl$ddiv)
+    $v0                                      0x00000d9c   Number         0  ddiv.o(x$fpl$ddiv)
+    ddiv_entry                               0x00000da3   Thumb Code     0  ddiv.o(x$fpl$ddiv)
+    x$fpl$dfixu                              0x0000104c   Section       90  dfixu.o(x$fpl$dfixu)
+    $v0                                      0x0000104c   Number         0  dfixu.o(x$fpl$dfixu)
+    x$fpl$dfltu                              0x000010a6   Section       38  dflt_clz.o(x$fpl$dfltu)
+    $v0                                      0x000010a6   Number         0  dflt_clz.o(x$fpl$dfltu)
+    x$fpl$dnaninf                            0x000010cc   Section      156  dnaninf.o(x$fpl$dnaninf)
+    $v0                                      0x000010cc   Number         0  dnaninf.o(x$fpl$dnaninf)
+    x$fpl$dretinf                            0x00001168   Section       12  dretinf.o(x$fpl$dretinf)
+    $v0                                      0x00001168   Number         0  dretinf.o(x$fpl$dretinf)
+    x$fpl$fpinit                             0x00001174   Section       10  fpinit.o(x$fpl$fpinit)
+    $v0                                      0x00001174   Number         0  fpinit.o(x$fpl$fpinit)
+    x$fpl$usenofp                            0x0000117e   Section        0  usenofp.o(x$fpl$usenofp)
     .data                                    0x20000000   Section        8  controlpins.o(.data)
     pixelCounter                             0x20000004   Data           4  controlpins.o(.data)
     .data                                    0x20000008   Section        1  lab5-camera.o(.data)
@@ -659,42 +659,42 @@ Image Symbol Table
     ADC_In                                   0x00000551   Thumb Code    52  adc14.o(i.ADC_In)
     CLK_Handler                              0x0000058d   Thumb Code    76  controlpins.o(i.CLK_Handler)
     CalcPeriodFromFrequency                  0x000005e9   Thumb Code    84  timer32.o(i.CalcPeriodFromFrequency)
-    ControlPin_CLK_Init                      0x00000651   Thumb Code    66  controlpins.o(i.ControlPin_CLK_Init)
-    ControlPin_SI_Init                       0x000006a5   Thumb Code    64  controlpins.o(i.ControlPin_SI_Init)
-    DisableSysTickTimer                      0x000006f5   Thumb Code    18  systicktimer.o(i.DisableSysTickTimer)
-    EnableSysTickTimer                       0x00000707   Thumb Code    18  systicktimer.o(i.EnableSysTickTimer)
-    INIT_Camera                              0x00000719   Thumb Code    22  lab5-camera.o(i.INIT_Camera)
-    LED1_Init                                0x00000735   Thumb Code    62  leds.o(i.LED1_Init)
-    LED1_Off                                 0x00000779   Thumb Code    14  leds.o(i.LED1_Off)
-    LED1_On                                  0x0000078d   Thumb Code    14  leds.o(i.LED1_On)
-    LED2_Init                                0x000007a1   Thumb Code   170  leds.o(i.LED2_Init)
-    SI_Handler                               0x00000851   Thumb Code    72  controlpins.o(i.SI_Handler)
-    Switch2_Init                             0x0000089d   Thumb Code    66  switches.o(i.Switch2_Init)
-    SysTickTimer_Init                        0x000008e5   Thumb Code    62  systicktimer.o(i.SysTickTimer_Init)
-    SysTick_Handler                          0x0000092d   Thumb Code    20  systicktimer.o(i.SysTick_Handler)
-    SystemInit                               0x00000949   Thumb Code   150  system_msp432p401r.o(i.SystemInit)
-    T32_INT1_IRQHandler                      0x000009fd   Thumb Code    24  timer32.o(i.T32_INT1_IRQHandler)
-    T32_INT2_IRQHandler                      0x00000a21   Thumb Code    24  timer32.o(i.T32_INT2_IRQHandler)
-    Timer32_1_Init                           0x00000a45   Thumb Code   208  timer32.o(i.Timer32_1_Init)
-    main                                     0x00000b29   Thumb Code   168  lab5-camera.o(i.main)
-    myDelay                                  0x00000c89   Thumb Code    26  lab5-camera.o(i.myDelay)
-    uart0_init                               0x00000ca9   Thumb Code   134  uart.o(i.uart0_init)
-    uart0_put                                0x00000d3d   Thumb Code    22  uart.o(i.uart0_put)
-    uart0_putchar                            0x00000d55   Thumb Code    20  uart.o(i.uart0_putchar)
-    __aeabi_ddiv                             0x00000d6d   Thumb Code     0  ddiv.o(x$fpl$ddiv)
-    _ddiv                                    0x00000d6d   Thumb Code   552  ddiv.o(x$fpl$ddiv)
-    __aeabi_d2uiz                            0x0000101d   Thumb Code     0  dfixu.o(x$fpl$dfixu)
-    _dfixu                                   0x0000101d   Thumb Code    90  dfixu.o(x$fpl$dfixu)
-    __aeabi_ui2d                             0x00001077   Thumb Code     0  dflt_clz.o(x$fpl$dfltu)
-    _dfltu                                   0x00001077   Thumb Code    38  dflt_clz.o(x$fpl$dfltu)
-    __fpl_dnaninf                            0x0000109d   Thumb Code   156  dnaninf.o(x$fpl$dnaninf)
-    __fpl_dretinf                            0x00001139   Thumb Code    12  dretinf.o(x$fpl$dretinf)
-    _fp_init                                 0x00001145   Thumb Code    10  fpinit.o(x$fpl$fpinit)
-    __fplib_config_fpu_vfp                   0x0000114d   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fplib_config_pureend_doubles           0x0000114d   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __I$use$fp                               0x0000114e   Number         0  usenofp.o(x$fpl$usenofp)
-    Region$$Table$$Base                      0x00001150   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x00001170   Number         0  anon$$obj.o(Region$$Table)
+    ControlPin_CLK_Init                      0x00000651   Thumb Code    78  controlpins.o(i.ControlPin_CLK_Init)
+    ControlPin_SI_Init                       0x000006b1   Thumb Code    76  controlpins.o(i.ControlPin_SI_Init)
+    DisableSysTickTimer                      0x0000070d   Thumb Code    28  systicktimer.o(i.DisableSysTickTimer)
+    EnableSysTickTimer                       0x00000729   Thumb Code    28  systicktimer.o(i.EnableSysTickTimer)
+    INIT_Camera                              0x00000745   Thumb Code    22  lab5-camera.o(i.INIT_Camera)
+    LED1_Init                                0x00000761   Thumb Code    62  leds.o(i.LED1_Init)
+    LED1_Off                                 0x000007a5   Thumb Code    14  leds.o(i.LED1_Off)
+    LED1_On                                  0x000007b9   Thumb Code    14  leds.o(i.LED1_On)
+    LED2_Init                                0x000007cd   Thumb Code   170  leds.o(i.LED2_Init)
+    SI_Handler                               0x0000087d   Thumb Code    72  controlpins.o(i.SI_Handler)
+    Switch2_Init                             0x000008c9   Thumb Code    66  switches.o(i.Switch2_Init)
+    SysTickTimer_Init                        0x00000911   Thumb Code    68  systicktimer.o(i.SysTickTimer_Init)
+    SysTick_Handler                          0x0000095d   Thumb Code    20  systicktimer.o(i.SysTick_Handler)
+    SystemInit                               0x00000979   Thumb Code   150  system_msp432p401r.o(i.SystemInit)
+    T32_INT1_IRQHandler                      0x00000a2d   Thumb Code    24  timer32.o(i.T32_INT1_IRQHandler)
+    T32_INT2_IRQHandler                      0x00000a51   Thumb Code    24  timer32.o(i.T32_INT2_IRQHandler)
+    Timer32_1_Init                           0x00000a75   Thumb Code   208  timer32.o(i.Timer32_1_Init)
+    main                                     0x00000b59   Thumb Code   168  lab5-camera.o(i.main)
+    myDelay                                  0x00000cb9   Thumb Code    26  lab5-camera.o(i.myDelay)
+    uart0_init                               0x00000cd9   Thumb Code   134  uart.o(i.uart0_init)
+    uart0_put                                0x00000d6d   Thumb Code    22  uart.o(i.uart0_put)
+    uart0_putchar                            0x00000d85   Thumb Code    20  uart.o(i.uart0_putchar)
+    __aeabi_ddiv                             0x00000d9d   Thumb Code     0  ddiv.o(x$fpl$ddiv)
+    _ddiv                                    0x00000d9d   Thumb Code   552  ddiv.o(x$fpl$ddiv)
+    __aeabi_d2uiz                            0x0000104d   Thumb Code     0  dfixu.o(x$fpl$dfixu)
+    _dfixu                                   0x0000104d   Thumb Code    90  dfixu.o(x$fpl$dfixu)
+    __aeabi_ui2d                             0x000010a7   Thumb Code     0  dflt_clz.o(x$fpl$dfltu)
+    _dfltu                                   0x000010a7   Thumb Code    38  dflt_clz.o(x$fpl$dfltu)
+    __fpl_dnaninf                            0x000010cd   Thumb Code   156  dnaninf.o(x$fpl$dnaninf)
+    __fpl_dretinf                            0x00001169   Thumb Code    12  dretinf.o(x$fpl$dretinf)
+    _fp_init                                 0x00001175   Thumb Code    10  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x0000117d   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x0000117d   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __I$use$fp                               0x0000117e   Number         0  usenofp.o(x$fpl$usenofp)
+    Region$$Table$$Base                      0x00001180   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x000011a0   Number         0  anon$$obj.o(Region$$Table)
     tempCounter                              0x20000000   Data           4  controlpins.o(.data)
     g_sendData                               0x20000008   Data           1  lab5-camera.o(.data)
     SysTickPeriodicTask                      0x2000000c   Data           4  systicktimer.o(.data)
@@ -716,9 +716,9 @@ Memory Map of the image
 
   Image Entry point : 0x0000020d
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x000011a8, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x000011d8, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00001170, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x000011a0, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -793,61 +793,61 @@ Memory Map of the image
     0x00000550   0x00000550   0x0000003c   Code   RO          476    i.ADC_In            adc14.o
     0x0000058c   0x0000058c   0x0000005c   Code   RO            4    i.CLK_Handler       controlpins.o
     0x000005e8   0x000005e8   0x00000068   Code   RO          402    i.CalcPeriodFromFrequency  timer32.o
-    0x00000650   0x00000650   0x00000054   Code   RO            5    i.ControlPin_CLK_Init  controlpins.o
-    0x000006a4   0x000006a4   0x00000050   Code   RO            6    i.ControlPin_SI_Init  controlpins.o
-    0x000006f4   0x000006f4   0x00000012   Code   RO          165    i.DisableSysTickTimer  systicktimer.o
-    0x00000706   0x00000706   0x00000012   Code   RO          166    i.EnableSysTickTimer  systicktimer.o
-    0x00000718   0x00000718   0x0000001c   Code   RO          109    i.INIT_Camera       lab5-camera.o
-    0x00000734   0x00000734   0x00000044   Code   RO          288    i.LED1_Init         leds.o
-    0x00000778   0x00000778   0x00000014   Code   RO          289    i.LED1_Off          leds.o
-    0x0000078c   0x0000078c   0x00000014   Code   RO          290    i.LED1_On           leds.o
-    0x000007a0   0x000007a0   0x000000b0   Code   RO          292    i.LED2_Init         leds.o
-    0x00000850   0x00000850   0x0000004c   Code   RO            7    i.SI_Handler        controlpins.o
-    0x0000089c   0x0000089c   0x00000048   Code   RO          362    i.Switch2_Init      switches.o
-    0x000008e4   0x000008e4   0x00000048   Code   RO          167    i.SysTickTimer_Init  systicktimer.o
-    0x0000092c   0x0000092c   0x0000001c   Code   RO          168    i.SysTick_Handler   systicktimer.o
-    0x00000948   0x00000948   0x000000b4   Code   RO          513    i.SystemInit        system_msp432p401r.o
-    0x000009fc   0x000009fc   0x00000024   Code   RO          404    i.T32_INT1_IRQHandler  timer32.o
-    0x00000a20   0x00000a20   0x00000024   Code   RO          405    i.T32_INT2_IRQHandler  timer32.o
-    0x00000a44   0x00000a44   0x000000e4   Code   RO          406    i.Timer32_1_Init    timer32.o
-    0x00000b28   0x00000b28   0x00000160   Code   RO          110    i.main              lab5-camera.o
-    0x00000c88   0x00000c88   0x00000020   Code   RO          111    i.myDelay           lab5-camera.o
-    0x00000ca8   0x00000ca8   0x00000094   Code   RO          212    i.uart0_init        uart.o
-    0x00000d3c   0x00000d3c   0x00000016   Code   RO          213    i.uart0_put         uart.o
-    0x00000d52   0x00000d52   0x00000002   PAD
-    0x00000d54   0x00000d54   0x00000018   Code   RO          214    i.uart0_putchar     uart.o
-    0x00000d6c   0x00000d6c   0x000002b0   Code   RO          582    x$fpl$ddiv          fz_wm.l(ddiv.o)
-    0x0000101c   0x0000101c   0x0000005a   Code   RO          585    x$fpl$dfixu         fz_wm.l(dfixu.o)
-    0x00001076   0x00001076   0x00000026   Code   RO          589    x$fpl$dfltu         fz_wm.l(dflt_clz.o)
-    0x0000109c   0x0000109c   0x0000009c   Code   RO          603    x$fpl$dnaninf       fz_wm.l(dnaninf.o)
-    0x00001138   0x00001138   0x0000000c   Code   RO          605    x$fpl$dretinf       fz_wm.l(dretinf.o)
-    0x00001144   0x00001144   0x0000000a   Code   RO          694    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x0000114e   0x0000114e   0x00000000   Code   RO          607    x$fpl$usenofp       fz_wm.l(usenofp.o)
-    0x0000114e   0x0000114e   0x00000002   PAD
-    0x00001150   0x00001150   0x00000020   Data   RO          762    Region$$Table       anon$$obj.o
+    0x00000650   0x00000650   0x00000060   Code   RO            5    i.ControlPin_CLK_Init  controlpins.o
+    0x000006b0   0x000006b0   0x0000005c   Code   RO            6    i.ControlPin_SI_Init  controlpins.o
+    0x0000070c   0x0000070c   0x0000001c   Code   RO          165    i.DisableSysTickTimer  systicktimer.o
+    0x00000728   0x00000728   0x0000001c   Code   RO          166    i.EnableSysTickTimer  systicktimer.o
+    0x00000744   0x00000744   0x0000001c   Code   RO          109    i.INIT_Camera       lab5-camera.o
+    0x00000760   0x00000760   0x00000044   Code   RO          288    i.LED1_Init         leds.o
+    0x000007a4   0x000007a4   0x00000014   Code   RO          289    i.LED1_Off          leds.o
+    0x000007b8   0x000007b8   0x00000014   Code   RO          290    i.LED1_On           leds.o
+    0x000007cc   0x000007cc   0x000000b0   Code   RO          292    i.LED2_Init         leds.o
+    0x0000087c   0x0000087c   0x0000004c   Code   RO            7    i.SI_Handler        controlpins.o
+    0x000008c8   0x000008c8   0x00000048   Code   RO          362    i.Switch2_Init      switches.o
+    0x00000910   0x00000910   0x0000004c   Code   RO          167    i.SysTickTimer_Init  systicktimer.o
+    0x0000095c   0x0000095c   0x0000001c   Code   RO          168    i.SysTick_Handler   systicktimer.o
+    0x00000978   0x00000978   0x000000b4   Code   RO          513    i.SystemInit        system_msp432p401r.o
+    0x00000a2c   0x00000a2c   0x00000024   Code   RO          404    i.T32_INT1_IRQHandler  timer32.o
+    0x00000a50   0x00000a50   0x00000024   Code   RO          405    i.T32_INT2_IRQHandler  timer32.o
+    0x00000a74   0x00000a74   0x000000e4   Code   RO          406    i.Timer32_1_Init    timer32.o
+    0x00000b58   0x00000b58   0x00000160   Code   RO          110    i.main              lab5-camera.o
+    0x00000cb8   0x00000cb8   0x00000020   Code   RO          111    i.myDelay           lab5-camera.o
+    0x00000cd8   0x00000cd8   0x00000094   Code   RO          212    i.uart0_init        uart.o
+    0x00000d6c   0x00000d6c   0x00000016   Code   RO          213    i.uart0_put         uart.o
+    0x00000d82   0x00000d82   0x00000002   PAD
+    0x00000d84   0x00000d84   0x00000018   Code   RO          214    i.uart0_putchar     uart.o
+    0x00000d9c   0x00000d9c   0x000002b0   Code   RO          582    x$fpl$ddiv          fz_wm.l(ddiv.o)
+    0x0000104c   0x0000104c   0x0000005a   Code   RO          585    x$fpl$dfixu         fz_wm.l(dfixu.o)
+    0x000010a6   0x000010a6   0x00000026   Code   RO          589    x$fpl$dfltu         fz_wm.l(dflt_clz.o)
+    0x000010cc   0x000010cc   0x0000009c   Code   RO          603    x$fpl$dnaninf       fz_wm.l(dnaninf.o)
+    0x00001168   0x00001168   0x0000000c   Code   RO          605    x$fpl$dretinf       fz_wm.l(dretinf.o)
+    0x00001174   0x00001174   0x0000000a   Code   RO          694    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x0000117e   0x0000117e   0x00000000   Code   RO          607    x$fpl$usenofp       fz_wm.l(usenofp.o)
+    0x0000117e   0x0000117e   0x00000002   PAD
+    0x00001180   0x00001180   0x00000020   Data   RO          762    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x00001170, Size: 0x00000038, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x000011a0, Size: 0x00000038, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x00001170   0x00000008   Data   RW            8    .data               controlpins.o
-    0x20000008   0x00001178   0x00000001   Data   RW          113    .data               lab5-camera.o
-    0x20000009   0x00001179   0x00000003   PAD
-    0x2000000c   0x0000117c   0x00000008   Data   RW          169    .data               systicktimer.o
-    0x20000014   0x00001184   0x00000004   PAD
-    0x20000018   0x00001188   0x00000019   Data   RW          408    .data               timer32.o
-    0x20000031   0x000011a1   0x00000003   PAD
-    0x20000034   0x000011a4   0x00000004   Data   RW          514    .data               system_msp432p401r.o
+    0x20000000   0x000011a0   0x00000008   Data   RW            8    .data               controlpins.o
+    0x20000008   0x000011a8   0x00000001   Data   RW          113    .data               lab5-camera.o
+    0x20000009   0x000011a9   0x00000003   PAD
+    0x2000000c   0x000011ac   0x00000008   Data   RW          169    .data               systicktimer.o
+    0x20000014   0x000011b4   0x00000004   PAD
+    0x20000018   0x000011b8   0x00000019   Data   RW          408    .data               timer32.o
+    0x20000031   0x000011d1   0x00000003   PAD
+    0x20000034   0x000011d4   0x00000004   Data   RW          514    .data               system_msp432p401r.o
 
 
-    Execution Region ER_ZI (Exec base: 0x20000038, Load base: 0x000011a8, Size: 0x000005c8, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_ZI (Exec base: 0x20000038, Load base: 0x000011d8, Size: 0x000005c8, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x20000038        -       0x00000164   Zero   RW          112    .bss                lab5-camera.o
     0x2000019c        -       0x00000060   Zero   RW          636    .bss                c_w.l(libspace.o)
-    0x200001fc   0x000011a8   0x00000004   PAD
+    0x200001fc   0x000011d8   0x00000004   PAD
     0x20000200        -       0x00000200   Zero   RW          503    HEAP                startup_msp432p401r_uvision.o
     0x20000400        -       0x00000200   Zero   RW          502    STACK               startup_msp432p401r_uvision.o
 
@@ -860,19 +860,19 @@ Image component sizes
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
        208         30          0          0          0        937   adc14.o
-       332         54          0          8          0      10400   controlpins.o
+       356         54          0          8          0      10408   controlpins.o
         32          0          0          0          0        536   cortexm.o
        412        196          0          1        356       2177   lab5-camera.o
        284         24          0          0          0       1589   leds.o
         64         26        324          0       1024        892   startup_msp432p401r_uvision.o
         72          6          0          0          0        411   switches.o
        180         30          0          4          0        735   system_msp432p401r.o
-       136         18          0          8          0       2509   systicktimer.o
+       160         16          0          8          0       2517   systicktimer.o
        404         64          0         25          0       2987   timer32.o
        194         18          0          0          0       1361   uart.o
 
     ----------------------------------------------------------------------
-      2320        466        356         56       1380      24534   Object Totals
+      2368        464        356         56       1380      24550   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          2          0          0         10          0          0   (incl. Padding)
 
@@ -938,15 +938,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      4108        658        356         56       1480      23346   Grand Totals
-      4108        658        356         56       1480      23346   ELF Image Totals
-      4108        658        356         56          0          0   ROM Totals
+      4156        656        356         56       1480      23362   Grand Totals
+      4156        656        356         56       1480      23362   ELF Image Totals
+      4156        656        356         56          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 4464 (   4.36kB)
+    Total RO  Size (Code + RO Data)                 4512 (   4.41kB)
     Total RW  Size (RW Data + ZI Data)              1536 (   1.50kB)
-    Total ROM Size (Code + RO Data + RW Data)       4520 (   4.41kB)
+    Total ROM Size (Code + RO Data + RW Data)       4568 (   4.46kB)
 
 ==============================================================================
 

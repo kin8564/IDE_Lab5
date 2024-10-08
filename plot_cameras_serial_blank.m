@@ -42,10 +42,10 @@ while (1)
     % Check for data in the stream
     if serialObject.BytesAvailable
         val = fscanf(serialObject,'%i');
-        %val
+        val
         if ((val == -1) || (val == -3)) % -1 and -3 are start keywords
             count = 1;
-            %val
+            val
         elseif (val == -2) % End camera1 tx
             if (count >= 128)
                 plotdata(trace, 1);
@@ -96,9 +96,9 @@ maxval = max(smoothtrace);
 for i = 1:128
     %Edge detection (binary 0 or 1)
     %INSERT CODE
-    if(bintrace(i) > maxval)
+    if(trace(i) >= maxval / 2.0)
         bintrace(i) = 1;
-    elseif (bintrace(i) <= maxval)
+    else
         bintrace(i) = 0;
     end
 end
