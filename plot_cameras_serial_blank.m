@@ -77,18 +77,21 @@ drawnow;
 subplot(4,2,cam);
 %figure(figureHandle);
 plot(trace);
+title('Line Scan Camera Raw Data')
 %set(figureHandle,'Visible','on');
 
 %SMOOTH AND PLOT
 smoothtrace = trace;
-for i = 2:127
+for i = 3:126
     %5-point Averager
     %INSERT CODE
-    smoothtrace(i) = movmean(smoothtrace(i), 5);
+    smoothtrace(i) = (trace(i) + trace(i+1) + trace(i+2) + trace(i-1) + trace(i-2)) / 5;
+    %smoothtrace(i) = movmean(trace(i), 5);
 end
 subplot(4,2,cam+2);
 %figure(smoothhand);
 plot(smoothtrace);
+title('Line Scan Camera Low Pass Filter')
 
 %THRESHOLD
 %calculate 1's and 0's via thresholding
@@ -106,6 +109,7 @@ drawnow;
 subplot(4,2,cam+4);
 %figure(binfighand);
 plot(bintrace);
+title('Line Scan Camera Edge Detection')
 
 end %function
 
