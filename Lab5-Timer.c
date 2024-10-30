@@ -147,7 +147,6 @@ void PORT1_IRQHandler(void)
     // clear flag4, acknowledge
 		P1IFG &= ~BIT4;     
 		
-		//TODO
 		//Timer 2 ISR
 		if (!Timer2RunningFlag) {
 			Timer2RunningFlag = TRUE;
@@ -163,7 +162,7 @@ void PORT1_IRQHandler(void)
 			}
 			MillisecondCounter = 0;
 			}
-			}
+		}
 			
 			
   }
